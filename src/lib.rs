@@ -20,7 +20,7 @@ impl Config {
 
         let case_sensitive = match env::var("CASE_INSENSITIVE") {
             Ok(val) => val != "1",
-            Err(e) => false
+            Err(_) => false
         };
 
         Ok(Config { query, filename, case_sensitive })
